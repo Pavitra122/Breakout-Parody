@@ -8,7 +8,8 @@ body {
 .game
 {
   padding: 20px;
-  background-color: white;
+  border: 2px;
+  border-color: black;
   height: 500px;
   width: 500px;
   margin: 0 auto;
