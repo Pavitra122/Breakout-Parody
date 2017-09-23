@@ -10,9 +10,17 @@ var paddleWidth = 75;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
+var lines=3;
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
+class Bricks {
+  constructor(line,width) {
+      this.line= line;
+      this.width = width;
+  }
+}
 
 function keyDownHandler(e) {
     if(e.keyCode == 39) {
@@ -45,7 +53,11 @@ function drawPaddle() {
     ctx.fill();
     ctx.closePath();
 }
-
+function createBricks()
+{
+    var randomBricks=[7,8,5];
+    var BricksArray
+    
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
