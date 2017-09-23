@@ -1,14 +1,12 @@
-body
+#blocks
 {
-  background-image: url("blocks.jpg");]
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-}
-
-img
-{
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
   min-width: 100%;
+  min-height: 100%;
 }
 
 h1
