@@ -83,7 +83,7 @@ function initializeBricks()
         var brickwidth= 500/randomBricks[i];
         for( ;j<randomBricks[i];j++)
         {
-             BricksArray[j]=Bricks(i+1,brickwidth,1);
+             BricksArray[j]= new Bricks(i+1,brickwidth,1);
              
         }
     }
