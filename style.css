@@ -1,7 +1,9 @@
 #blocks {
   background-image: url("blocks.jpg");
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
 }
-
 
 h1
 {
