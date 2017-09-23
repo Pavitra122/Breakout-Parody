@@ -1,8 +1,8 @@
 #blocks {
-  background-image: url("blocks.jpg");
-  border: 0px;
-  padding: 0px;
-  margin: 0px;
+  background-image: url("grey.jpg");
+  background-repeat: repeat;
+  background-position: right top;
+  background-attachment: fixed;
 }
 
 h1
