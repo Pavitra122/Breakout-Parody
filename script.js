@@ -107,6 +107,7 @@ function draw() {
     drawPaddle();
     initializeBricks();
     ballcollision();
+    drawBricks();
     
     
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
