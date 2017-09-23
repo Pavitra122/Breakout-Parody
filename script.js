@@ -111,8 +111,11 @@ function initializeBricks()
         if( ((x+dx) > (BricksArray[i].xcood) )&& ( (x+dx) < (BricksArray[i].xcood + BricksArray[i].width) ))
             if(((y+dy) > (BricksArray[i].ycood) )&& ((y+dy) < (BricksArray[i].ycood+25)))
             {
-               BricksArray[i].visible=0;
-              dy=-dy;
+               if(BricksArray[i].visible==1)
+               {
+                 BricksArray[i].visible=0;
+                dy=-dy;
+               }
             }
      }
   
