@@ -11,6 +11,7 @@ var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
 var lines=3;
+var BricksArray= [];
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
@@ -19,6 +20,8 @@ class Bricks {
   constructor(line,width) {
       this.line= line;
       this.width = width;
+      this.xcood;
+      this.ycood;
   }
 }
 
@@ -53,10 +56,25 @@ function drawPaddle() {
     ctx.fill();
     ctx.closePath();
 }
-function createBricks()
+function initializeBricks()
 {
     var randomBricks=[7,8,5];
-    var BricksArray
+    var BricksArray= [];
+    var j=0;
+    for(var i=0; i<3;i++)
+    {
+        var brickwidth= 500/randomBricks[i];
+        for( ;j<randomBricks[i];j++)
+        {
+             BricksArray[j]=Bricks(i+1,brickwidth);
+        }
+    }
+}
+
+ function ballcollision()
+{
+     
+      
     
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
