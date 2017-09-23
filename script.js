@@ -110,7 +110,10 @@ function initializeBricks()
      {
         if( ((x+dx) > (BricksArray[i].xcood) )&& ( (x+dx) < (BricksArray[i].xcood + BricksArray[i].width) ))
             if(((y+dy) > (BricksArray[i].ycood) )&& ((y+dy) < (BricksArray[i].ycood+25)))
-                   BricksArray[i].visible=0;
+            {
+               BricksArray[i].visible=0;
+              dy=-dy;
+            }
      }
   
 }
@@ -136,8 +139,9 @@ function draw() {
             dy = -dy;
         }
         else {
+            initializeBricks();
             alert("GAME OVER");
-            document.location.reload();
+            
         }
     }
     
