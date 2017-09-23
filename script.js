@@ -93,7 +93,7 @@ function initializeBricks()
     var a=0;
     for(var i=0; i<3;i++)
     {
-        var brickwidth= 500/randomBricks[i];
+        var brickwidth= 495/randomBricks[i];
         for( var j=0 ;j<randomBricks[i];j++)
         {
              BricksArray[a]= new Bricks(i+1,brickwidth,1, j*brickwidth, 25*i);
@@ -106,8 +106,8 @@ function initializeBricks()
 {
      for( var i=0;i<BricksArray.length; i++)
      {
-        if( (x+dx) > (BricksArray[i].xcood) && (x+dx) < (BricksArray[i].xcood + BricksArray[i].width) )
-            if((y+dy) > (BricksArray[i].ycood) && (y+dy) < (BricksArray[i].ycood+25))
+        if( ((x+dx) > (BricksArray[i].xcood) )&& ( (x+dx) < (BricksArray[i].xcood + BricksArray[i].width) ))
+            if(((y+dy) > (BricksArray[i].ycood) )&& ((y+dy) < (BricksArray[i].ycood+25)))
                    BricksArray[i].visible=0;
      }
   
