@@ -7,10 +7,11 @@ body {
 
 .game
 {
-  padding: 20px;
+  margin: 20px;
   border-width: 2px;
   border-style: solid;
   border-color: black;
+  padding: 0px;
   height: 500px;
   width: 500px;
   margin: 0 auto;
