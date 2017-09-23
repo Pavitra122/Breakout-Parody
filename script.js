@@ -82,7 +82,7 @@ function initializeBricks()
             if((y+dy) > (BricksArray[i].ycood) && (y+dy) < (BricksArray[i].ycood+25))
                    BricksArray[i].visible=0;
      }
-  draw();
+  
 }
 
     
@@ -90,6 +90,8 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
+    initializeBricks();
+    ballcollision();
     
     
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
