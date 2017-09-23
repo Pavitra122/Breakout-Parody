@@ -68,7 +68,7 @@ function draw() {
     x += dx;
     y += dy;
     
-    if(y + dy >= canvas.height-ballRadius) {
+    if(y >= canvas.height-ballRadius) {
         alert("Game Over");
     }
 }
