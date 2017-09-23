@@ -7,8 +7,3 @@ ctx.fillStyle = "#FF0000";
 ctx.fill();
 ctx.closePath();
 
-ctx.beginPath();
-ctx.arc(240, 160, 10, 0, Math.PI*4, false);
-ctx.fillStyle = "green";
-ctx.fill();
-ctx.closePath();
