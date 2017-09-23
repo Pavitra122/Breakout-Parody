@@ -58,6 +58,21 @@ function drawPaddle() {
     ctx.fill();
     ctx.closePath();
 }
+
+function drawBricks() {
+    ctx.beginPath();
+    for (var r = 1; r <= 3; r++) {
+      for (var i = 0; i < BricksArray[r].length; i++) {
+        Bricks.xcood = i * BricksArray[r].width;
+        Bricks.ycood = r * height;
+        ctx.rect(Bricks.xcood, Bricks.ycood, BricksArray[r].width, height);
+        ctx.fillStyle = "#841F27";
+        ctx.fill();
+      }
+    }
+    ctx.closePath();
+}
+
 function initializeBricks()
 {
     var randomBricks=[7,8,5];
