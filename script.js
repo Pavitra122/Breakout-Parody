@@ -120,7 +120,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
-    initializeBricks();
+    
     ballcollision();
     drawBricks();
     
@@ -151,5 +151,5 @@ function draw() {
     x += dx;
     y += dy;
 }
-
+initializeBricks();
 setInterval(draw, 10);
