@@ -23,7 +23,7 @@ class Bricks {
       this.height;
       this.xcood;
       this.ycood;
-      this.visible=visible
+      this.visible=visible;
   }
 }
 
