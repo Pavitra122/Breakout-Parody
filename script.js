@@ -64,7 +64,7 @@ function drawBricks() {
   for( var z=0; z<BricksArray.length; z++)
   {
         ctx.BeginPath();
-        ctx.rect(Bricks.xcood, Bricks.ycood, BricksArray[z].width, height);
+        ctx.rect(BricksArray[z].xcood, BricksArray[z].ycood, BricksArray[z].width, 25);
         ctx.fillStyle = "#841F27";
         ctx.fill();
         ctx.closePath();
@@ -119,7 +119,7 @@ function draw() {
     drawBall();
     drawPaddle();
     initializeBricks();
-    //ballcollision();
+    ballcollision();
     drawBricks();
     
     
