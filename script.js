@@ -17,12 +17,12 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 class Bricks {
-  constructor(line,width,visible) {
+  constructor(line,width,visible,xcood,ycood) {
       this.line= line;
       this.width = width;
       this.height;
-      this.xcood;
-      this.ycood;
+      this.xcood=xcood;
+      this.ycood=ycood;
       this.visible=visible;
   }
 }
@@ -60,7 +60,19 @@ function drawPaddle() {
 }
 
 function drawBricks() {
-    ctx.beginPath();
+   
+  for( var z=0; z<BricksArray.length; z++)
+  {
+        ctx.BeginPath();
+        ctx.rect(Bricks.xcood, Bricks.ycood, BricksArray[z].width, height);
+        ctx.fillStyle = "#841F27";
+        ctx.fill();
+        ctx.closePath();
+  }
+}
+  
+  
+ /* ctx.beginPath();
     for (var r = 1; r <= 3; r++) {
       for (var i = 0; i < BricksArray[r].length; i++) {
         Bricks.xcood = i * BricksArray[r].width;
@@ -71,20 +83,21 @@ function drawBricks() {
       }
     }
     ctx.closePath();
+    
 }
-
+*/
 function initializeBricks()
 {
     var randomBricks=[7,8,5];
     
-    var j=0;
+    var a=0;
     for(var i=0; i<3;i++)
     {
         var brickwidth= 500/randomBricks[i];
-        for( ;j<randomBricks[i];j++)
+        for( var j=0 ;j<randomBricks[i];j++)
         {
-             BricksArray[j]= new Bricks(i+1,brickwidth,1);
-             
+             BricksArray[a]= new Bricks(i+1,brickwidth,1, j*brickwidth, 25*i);
+             a++;
         }
     }
 }
