@@ -63,11 +63,13 @@ function drawBricks() {
   
   for( var z=0; z<BricksArray.length; z++)
   {
-        ctx.beginPath();   
+      if(BricksArray[z].visible==1)  
+      {  ctx.beginPath();   
         ctx.rect(BricksArray[z].xcood+5, BricksArray[z].ycood+5, BricksArray[z].width-5, 20);
         ctx.fillStyle = "#841F27";
         ctx.fill();
         ctx.closePath();
+      }
   }
 }
   
