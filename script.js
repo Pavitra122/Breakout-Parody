@@ -126,7 +126,6 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
-    
     ballcollision();
     drawBricks();
     
@@ -141,9 +140,11 @@ function draw() {
         if(x > paddleX && x < paddleX + paddleWidth) {
             dy = -dy;
         }
-        else {
-            initializeBricks();
+        else {         
             alert("GAME OVER");
+            drawBall();
+            drawPaddle();
+            initializeBricks();
             
         }
     }
