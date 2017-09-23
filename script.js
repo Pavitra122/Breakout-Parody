@@ -76,7 +76,7 @@ function drawBricks() {
 function initializeBricks()
 {
     var randomBricks=[7,8,5];
-    var BricksArray= [];
+    
     var j=0;
     for(var i=0; i<3;i++)
     {
