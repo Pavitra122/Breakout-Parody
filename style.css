@@ -5,6 +5,11 @@ body {
   background-attachment: fixed;
 }
 
+#game
+{
+  background-color: white;
+}
+
 h1
 {
   color: white;
