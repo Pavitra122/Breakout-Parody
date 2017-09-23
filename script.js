@@ -9,7 +9,7 @@ ctx.closePath();
 
 ctx.beginPath();
 ctx.arc(240, 160, 10, 0, Math.PI*4, false);
-ctx.fillStyle = "green";
+ctx.fillStyle = "blue";
 ctx.fill();
 ctx.closePath();
 
