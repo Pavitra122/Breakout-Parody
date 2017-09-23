@@ -17,11 +17,13 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 class Bricks {
-  constructor(line,width) {
+  constructor(line,width,visible) {
       this.line= line;
       this.width = width;
+      this.height;
       this.xcood;
       this.ycood;
+      this.visible=visible
   }
 }
 
@@ -66,20 +68,29 @@ function initializeBricks()
         var brickwidth= 500/randomBricks[i];
         for( ;j<randomBricks[i];j++)
         {
-             BricksArray[j]=Bricks(i+1,brickwidth);
+             BricksArray[j]=Bricks(i+1,brickwidth,1);
+             
         }
     }
 }
 
  function ballcollision()
 {
-     
-      
+     for( var i=0;i<BricksArray.length; i++)
+     {
+        if( (x+dx) > (BricksArray[i].xcood) && (x+dx) < (BricksArray[i].xcood + BricksArray[i].width) )
+            if((y+dy) > (BricksArray[i].ycood) && (y+dy) < (BricksArray[i].ycood+25))
+                   BricksArray[i].visible=0;
+     }
+  draw();
+}
+
     
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBall();
     drawPaddle();
+    drawBricks();
     
     if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
         dx = -dx;
