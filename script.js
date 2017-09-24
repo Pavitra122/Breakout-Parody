@@ -155,7 +155,7 @@ function draw() {
     }
     else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX + paddleWidth) {
-           if((x-paddleX)<35 || (x-paddleX>65))
+           if((x-paddleX)<30 || (x-paddleX>70))
              dx=-dx;
            dy = -dy;
         }
@@ -163,9 +163,11 @@ function draw() {
             alert("GAME OVER");
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             resetBall();
+            drawBall();
             resetPaddle();
+            drawPaddle();
             initializeBricks();
-            
+            drawBricks();
         }
     }
     
