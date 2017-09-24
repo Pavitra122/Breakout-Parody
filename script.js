@@ -165,6 +165,7 @@ function draw() {
               dx=-dx;
             dy=-dy;
            }
+        }
         else {         
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             alert("GAME OVER");
