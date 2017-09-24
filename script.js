@@ -44,6 +44,14 @@ function keyUpHandler(e) {
     }
 }
 
+function resetBall() {
+    ctx.beginPath();
+    ctx.arc(canvas.width/2, canvas.height-30, ballRadius, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -51,6 +59,15 @@ function drawBall() {
     ctx.fill();
     ctx.closePath();
 }
+
+function resetPaddle() {
+    ctx.beginPath();
+    ctx.rect((canvas.width-paddleWidth)/2, canvas.height-paddleHeight, paddleWidth, paddleHeight);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
@@ -142,8 +159,8 @@ function draw() {
         }
         else {         
             alert("GAME OVER");
-            drawBall();
-            drawPaddle();
+            resetBall();
+            resetPaddle();
             initializeBricks();
             
         }
