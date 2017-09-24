@@ -6,7 +6,7 @@ var y = canvas.height-30;
 var dx = 2;
 var dy = -2;
 var paddleHeight = 10;
-var paddleWidth = 75;
+var paddleWidth = 100;
 var paddleX = (canvas.width-paddleWidth)/2;
 var rightPressed = false;
 var leftPressed = false;
@@ -155,7 +155,9 @@ function draw() {
     }
     else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX + paddleWidth) {
-            dy = -dy;
+           if((x-paddleX)<50)
+             dx=-dy;
+           dy = -dy;
         }
         else {         
             alert("GAME OVER");
