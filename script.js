@@ -161,6 +161,7 @@ function draw() {
         }
         else {         
             alert("GAME OVER");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             resetBall();
             resetPaddle();
             initializeBricks();
