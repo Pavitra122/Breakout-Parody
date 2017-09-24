@@ -155,13 +155,19 @@ function draw() {
     }
     else if(y + dy > canvas.height-ballRadius) {
         if(x > paddleX && x < paddleX + paddleWidth) {
-           if((x-paddleX)<30 || (x-paddleX>70))
-             dx=-dx;
-           dy = -dy;
-        }
+           if((x-paddleX)<30) {
+            if (dx > 0)
+               dx = -dx;
+            dy=-dy;
+            }
+           else if((x-paddleX)>70) {
+            if (dx < 0)
+              dx=-dx;
+            dy=-dy;
+           }
         else {         
-            alert("GAME OVER");
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            alert("GAME OVER");
             resetBall();
             drawBall();
             resetPaddle();
